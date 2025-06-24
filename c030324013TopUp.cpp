@@ -125,18 +125,6 @@ void totalHarga() {
     getch();
 }
 
-void menu() {
-    system("cls");
-    cout << "=== Menu Data Pelanggan Top Up Game ===\n";
-    cout << "1. Inisialisasi Data\n";
-    cout << "2. Menampilkan Data Pelanggan\n";
-    cout << "3. Menambah Data Pelanggan\n";
-    cout << "4. Menghapus Data Pelanggan\n";
-    cout << "5. Total Semua Harga Top Up\n";
-    cout << "6. Exit\n";
-    cout << "Masukkan pilihan: ";
-}
-
 int main() {
     char pilih;
     do {
