@@ -29,3 +29,24 @@ void inisialisasiData() {
     cout << "Data pelanggan berhasil dimasukkan.\n";
     getch();
 }
+
+void tampilkanPelanggan() {
+    system("cls");
+    if (head == nullptr) {
+        cout << "Belum ada data pelanggan.\n";
+    } else {
+        cout << left << setw(5) << "No"
+             << setw(20) << "Nama"
+             << setw(20) << "Item"
+             << setw(15) << "Harga Item" << endl;
+
+        int no = 1;
+        for (Node* p = head; p != nullptr; p = p->next) {
+            cout << setw(5) << no++
+                 << setw(20) << p->data.nama
+                 << setw(20) << p->data.namaItem
+                 << "Rp " << p->data.hargaItem << endl;
+        }
+    }
+    getch();
+}
