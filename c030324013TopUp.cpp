@@ -16,3 +16,16 @@ struct Node {
 };
 
 Node* head = nullptr;
+
+void inisialisasiData() {
+    Node* n1 = new Node{{"Aulia", "Diamond FF", 15500}, nullptr};
+    Node* n2 = new Node{{"Adel", "UC PUBG", 14000}, nullptr};
+    Node* n3 = new Node{{"Arin", "Diamond ML", 9000}, nullptr};
+
+    head = n1;
+    n1->next = n2;
+    n2->next = n3;
+
+    cout << "Data pelanggan berhasil dimasukkan.\n";
+    getch();
+}
