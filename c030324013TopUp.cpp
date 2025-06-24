@@ -50,3 +50,26 @@ void tampilkanPelanggan() {
     }
     getch();
 }
+
+void tambahPelanggan() {
+    system("cls");
+    Node* baru = new Node;
+    cout << "Nama Pelanggan: "; cin >> ws; getline(cin, baru->data.nama);
+    cout << "Item yang dipilih: "; getline(cin, baru->data.namaItem);
+    cout << "Harga Top Up: Rp "; cin >> baru->data.hargaItem;
+    baru->next = nullptr;
+
+    if (head == nullptr) {
+        head = baru;
+    } else {
+        Node* p = head;
+        while (p->next != nullptr)
+            p = p->next;
+        p->next = baru;
+    }
+
+    cout << "Data berhasil ditambahkan!\n";
+    getch();
+
+    tampilkanPelanggan();
+}
