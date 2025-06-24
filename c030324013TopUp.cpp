@@ -114,3 +114,60 @@ void hapusPelanggan() {
 
     tampilkanPelanggan();
 }
+
+void totalHarga() {
+    system("cls");
+    int total = 0;
+    for (Node* p = head; p != nullptr; p = p->next)
+        total += p->data.hargaItem;
+
+    cout << "Total seluruh harga top up: Rp " << total << endl;
+    getch();
+}
+
+void menu() {
+    system("cls");
+    cout << "=== Menu Data Pelanggan Top Up Game ===\n";
+    cout << "1. Inisialisasi Data\n";
+    cout << "2. Menampilkan Data Pelanggan\n";
+    cout << "3. Menambah Data Pelanggan\n";
+    cout << "4. Menghapus Data Pelanggan\n";
+    cout << "5. Total Semua Harga Top Up\n";
+    cout << "6. Exit\n";
+    cout << "Masukkan pilihan: ";
+}
+
+int main() {
+    char pilih;
+    do {
+        menu();
+        pilih = getch();
+        switch (pilih) {
+            case '1': inisialisasiData(); 
+            break;
+ 
+            case '2': tampilkanPelanggan(); 
+            break;
+
+            case '3': tambahPelanggan();
+            break;
+
+            case '4': hapusPelanggan(); 
+            break;
+
+            case '5': totalHarga(); 
+            break;
+
+            case '6': 
+            break;
+
+            default:
+                system("cls");
+                cout << "Pilihan tidak tersedia!\n";
+                getch();
+                break;
+        }
+    } while (pilih != '6');
+
+    return 0;
+}
