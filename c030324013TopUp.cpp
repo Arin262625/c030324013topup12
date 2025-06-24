@@ -73,3 +73,44 @@ void tambahPelanggan() {
 
     tampilkanPelanggan();
 }
+
+void hapusPelanggan() {
+    system("cls");
+    if (head == nullptr) {
+        cout << "Data kosong!\n";
+        getch();
+        return;
+    }
+    int no;
+    cout << "\nMasukkan nomor pelanggan yang ingin dihapus: ";
+    cin >> no;
+
+    if (no < 1) {
+        cout << "Nomor tidak valid!\n";
+        getch();
+        return;
+    }
+    Node* hapus;
+    if (no == 1) {
+        hapus = head;
+        head = head->next;
+    } else {
+        Node* p = head;
+        for (int i = 1; i < no - 1 && p != nullptr; i++)
+            p = p->next;
+
+        if (p == nullptr || p->next == nullptr) {
+            cout << "Nomor tidak valid!\n";
+            getch();
+            return;
+        }
+        hapus = p->next;
+        p->next = hapus->next;
+    }
+
+    cout << "Data \"" << hapus->data.nama << "\" berhasil dihapus.\n";
+    delete hapus;
+    getch();
+
+    tampilkanPelanggan();
+}
