@@ -128,7 +128,7 @@ void totalHarga() {
 int main() {
     char pilih;
     do {
-        menu();
+        int menu();
         pilih = getch();
         switch (pilih) {
             case '1': inisialisasiData(); 
